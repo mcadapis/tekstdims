@@ -8,12 +8,13 @@
         Title="makepassword" Height="305.072" Width="460.242">
     <Grid>
 
-        <Button Content="Generate" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Generate" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="75" Click="Generate_passwords"/>
         <TextBox Name="txtin" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="top" Width="432"/>
-        <TextBox Name="txtout"  Margin="10,0,0,10.2" TextWrapping="Wrap" AcceptsReturn="True" Text="something else" Height="161" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="432"/>
-        <CheckBox Name="memz" Content="memorable" HorizontalAlignment="Left" Margin="101,41,0,0" VerticalAlignment="Top"/>
-        <Slider Name="sliderman" HorizontalAlignment="Left" Margin="101,70,0,0" VerticalAlignment="Top" Width="341" ValueChanged="sliderman_ValueChanged"/>
+        <TextBox Name="txtout"  Margin="10,0,0,10.2" TextWrapping="Wrap" AcceptsReturn="True" Text="password output" Height="161" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="432"/>
+        <CheckBox Name="memorablePasswords" Content="memorable" HorizontalAlignment="Left" Margin="101,41,0,0" VerticalAlignment="Top" Checked="memorablePasswords_Checked"/>
+        <Slider Name="sliderman" HorizontalAlignment="Left" Margin="101,70,0,0" VerticalAlignment="Top" Width="341" ValueChanged="passwordLengthslider_ValueChanged"/>
         <Label Content="Længde" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="75"/>
+        <CheckBox x:Name="NoSpecials" Content="No Special characters" HorizontalAlignment="Left" Margin="195,41,0,0" VerticalAlignment="Top" />
 
     </Grid>
 </Window>

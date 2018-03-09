@@ -21,71 +21,87 @@ namespace parser
     public partial class MainWindow : Window
     {
 
-        public string nothing_to_see_here { get; set; }
+        Dictionary<char, string> temmemem = new Dictionary<char, string>();
+        public string lastSavedInput { get; set; }
 
         public MainWindow()
         {
-            this.sliderman_before_changed = 0;
-            this.nothing_to_see_here = "don goofed";
+            temmemem.Add(Convert.ToChar("r"), "revolver");
+            temmemem.Add(Convert.ToChar("o"), "ocelot");
+
+            this.SavedSliderValue = 0;
+            this.lastSavedInput = "don goofed";
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Generate_passwords(object sender, RoutedEventArgs e)
         {
-            nothing_to_see_here = txtin.Text;
-            int s = 0;
-            Char[] specials = ("~!@#$%^&*_-+=,.`|(){}[]:;'<>?/").ToCharArray();
-
+            lastSavedInput = txtin.Text;
+            string work = lastSavedInput;
+            Char[] input = txtin.Text.ToCharArray();
             Random rand = new Random();
+            List<string> outs = new List<string>();
 
-            Dictionary<Type, int> dictionary = new Dictionary<Type, int>();
-            List <string> outs = new List<string>();
-
-            for (int i = 0; i < 100; i++)
+            if (memorablePasswords.IsChecked ?? true)
             {
-                Char[] input = txtin.Text.ToCharArray();
-                foreach (char c in input)
+                Dictionary<int, char[]> list = new Dictionary<int, char[]>();
+                int counter = 0;
+                int increment = 0;
+                foreach(char c in input)
                 {
-                    //int test = (DateTime.Now.Second);
+                    foreach (KeyValuePair<char, string> kvp in temmemem)
+                    {
+                        if (c == kvp.Key)
+                        {
+                            list.Add(counter, kvp.Value.ToCharArray());
 
-                    int d = rand.Next(100, 1000) % input.Length;
-                    input[d] = specials[i % specials.Length];
-                    i++;
+                            work = work.Insert(counter + increment, kvp.Value.ToString());
+                        }
+                    }
+                    counter++;
                 }
-                outs.Add(new string (input));
+                input = work.ToCharArray();
             }
-
-            //    //determine if text contains necessary characters
-            //    //Exclude specific characters
-            //    //Make passwords more memorable
-            //    //User define Length 
-
-            // Bug - longer inputs = smaller number of outputs
+            if (NoSpecials.IsChecked ?? true)
+            {
+                outs.Add("sorry den del er ikke færdigt");
+            }
+            else { 
+                Char[] specials = ("~!@#$%^&*_-+=,.`|(){}[]:;'<>?/").ToCharArray();
+                for (int i = 0; i < 100; i++)
+                {
+                    foreach (char c in input)
+                    {
+                        //int test = (DateTime.Now.Second);
+                        //some percent specials can come in here
+                        int d = rand.Next(100, 1000) % input.Length;
+                        input[d] = specials[i % specials.Length];
+                        i++;
+                    }
+                    outs.Add(new string(input));
+                }
+            }
 
             txtout.Text = string.Join(" \n", outs.ToArray());
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            //Make the passwords memorable again!
-        }
-        public double sliderman_before_changed { get; set; }
-        private void sliderman_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        public double SavedSliderValue { get; set; }
+        private void passwordLengthslider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             // change length of text in until temp is as long as sliderman
 
             if (txtin.Text == null || txtin.Text == "") 
             { 
-                txtin.Text = nothing_to_see_here;
+                txtin.Text = lastSavedInput;
             }
-            double value = Convert.ToInt64(sliderman.Value*10);
+            double SliderLength = Convert.ToInt64(sliderman.Value*10);
             char[] start = txtin.Text.ToCharArray();
             List<char> temp = start.ToList();
             int input_size = temp.Count;
             
-            if (sliderman_before_changed <= value)
+            if (SavedSliderValue <= SliderLength)
             {
                 int i = 0;
-                while (temp.Count < value)
+                while (temp.Count < SliderLength)
                 {
                     if (i >= input_size)
                     {
@@ -98,19 +114,23 @@ namespace parser
             }
             // add functionality
             //Delete the most common characters first
-            if (sliderman_before_changed > value)
+            if (SavedSliderValue > SliderLength)
             {
                 int i = temp.Count-1;
-                while (temp.Count > value)
+                while (temp.Count > SliderLength)
                 {
                     temp.Remove(start[i]);
                     i--;
                 }
             }
-
-
-            sliderman_before_changed = value;
+            SavedSliderValue = SliderLength;
             txtin.Text = String.Join("",temp.ToArray()); ;
+        }
+        private void memorablePasswords_Checked(object sender, RoutedEventArgs e)
+        {
+            //Make the passwords memorable again!
+            
+            if (memorablePasswords.IsChecked ?? false) { }
         }
     }
 }
