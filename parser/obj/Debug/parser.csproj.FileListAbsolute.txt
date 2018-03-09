@@ -1,0 +1,15 @@
+c:\users\lb\source\repos\parser\parser\bin\Debug\parser.exe.config
+c:\users\lb\source\repos\parser\parser\bin\Debug\parser.exe
+c:\users\lb\source\repos\parser\parser\bin\Debug\parser.pdb
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.csprojResolveAssemblyReference.cache
+c:\users\lb\source\repos\parser\parser\obj\Debug\MainWindow.g.cs
+c:\users\lb\source\repos\parser\parser\obj\Debug\App.g.cs
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser_MarkupCompile.cache
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser_MarkupCompile.lref
+c:\users\lb\source\repos\parser\parser\obj\Debug\MainWindow.baml
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.g.resources
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.Properties.Resources.resources
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.csproj.GenerateResource.Cache
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.csproj.CoreCompileInputs.cache
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.exe
+c:\users\lb\source\repos\parser\parser\obj\Debug\parser.pdb
