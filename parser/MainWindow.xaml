@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:parser"
         mc:Ignorable="d"
-        Title="makepassword" Height="305.072" Width="460.242">
-    <Grid>
+        Title="makepassword" Height="360" Width="470" MaxWidth="470">
+    <Grid Margin="0,0,-0.4,24">
 
         <Button Content="Generate" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="75" Click="Generate_passwords"/>
-        <TextBox Name="txtin" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="top" Width="432"/>
-        <TextBox Name="txtout"  Margin="10,0,0,10.2" TextWrapping="Wrap" AcceptsReturn="True" Text="password output" Height="161" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="432"/>
-        <CheckBox Name="memorablePasswords" Content="memorable" HorizontalAlignment="Left" Margin="101,41,0,0" VerticalAlignment="Top" Checked="memorablePasswords_Checked"/>
+        <TextBox Name="txtin" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="abcdefghijklmnopqrstuvwxyz" VerticalAlignment="top" Width="432"/>
+        <TextBox Name="txtout"  Margin="129,136,0,11.4" TextWrapping="Wrap" AcceptsReturn="True" Text="" HorizontalAlignment="Left" Width="313"/>
+        <CheckBox Name="memorablePasswords" Content="Memorable" HorizontalAlignment="Left" Margin="101,41,0,0" VerticalAlignment="Top" Checked="memorablePasswords_Checked"/>
         <Slider Name="sliderman" HorizontalAlignment="Left" Margin="101,70,0,0" VerticalAlignment="Top" Width="341" ValueChanged="passwordLengthslider_ValueChanged"/>
-        <Label Content="Længde" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="75"/>
-        <CheckBox x:Name="NoSpecials" Content="No Special characters" HorizontalAlignment="Left" Margin="195,41,0,0" VerticalAlignment="Top" />
+        <Label Content="Length" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="75"/>
+        <CheckBox x:Name="Specials" Content="Special characters" HorizontalAlignment="Left" Margin="187,41,0,0" VerticalAlignment="Top" />
+        <Slider Name="KompleksSlider" HorizontalAlignment="Left" Margin="101,93,0,0" VerticalAlignment="Top" Height="21" Width="341"/>
+        <Label Content="Complexity" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_out_save"  Margin="10,136,0,11.4" TextWrapping="Wrap" AcceptsReturn="True" Text="" HorizontalAlignment="Left" Width="111" />
+        <Label Content="Saves:" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Auto passwords:" HorizontalAlignment="Left" Margin="129,110,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="Integers" Content="Numbers" HorizontalAlignment="Left" Margin="306,41,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -28,6 +28,8 @@ namespace parser
         {
             temmemem.Add(Convert.ToChar("r"), "revolver");
             temmemem.Add(Convert.ToChar("o"), "ocelot");
+            temmemem.Add(Convert.ToChar("e"), "elefant");
+            temmemem.Add(Convert.ToChar("v"), "variabler");
 
             this.SavedSliderValue = 0;
             this.lastSavedInput = "don goofed";
@@ -35,6 +37,7 @@ namespace parser
         }
         private void Generate_passwords(object sender, RoutedEventArgs e)
         {
+            string spcl = null;
             lastSavedInput = txtin.Text;
             string work = lastSavedInput;
             Char[] input = txtin.Text.ToCharArray();
@@ -53,34 +56,44 @@ namespace parser
                         if (c == kvp.Key)
                         {
                             list.Add(counter, kvp.Value.ToCharArray());
-
                             work = work.Insert(counter + increment, kvp.Value.ToString());
+                            increment += kvp.Value.Length;
+                            break;
                         }
                     }
                     counter++;
                 }
                 input = work.ToCharArray();
             }
-            if (NoSpecials.IsChecked ?? true)
+            if (Specials.IsChecked ?? true)
             {
-                outs.Add("sorry den del er ikke færdigt");
+                spcl += "~!@#$%^&*_-+=,.`|(){}[]:;'<>?/";
             }
-            else { 
-                Char[] specials = ("~!@#$%^&*_-+=,.`|(){}[]:;'<>?/").ToCharArray();
-                for (int i = 0; i < 100; i++)
+            if (Integers.IsChecked ?? true)
+            {
+                spcl += "1234567890";
+            }
+            if (spcl != null)
+            {
+                Char[] specials = spcl.ToCharArray();
+                double kmpx = KompleksSlider.Value * (input.Length % 5);
+                for (int i = 1; i < 10; i++)
                 {
-                    foreach (char c in input)
+                    for (int k = Convert.ToInt32(kmpx); k >= 0/*input.Length*/ % i; k--)
                     {
-                        //int test = (DateTime.Now.Second);
-                        //some percent specials can come in here
-                        int d = rand.Next(100, 1000) % input.Length;
-                        input[d] = specials[i % specials.Length];
-                        i++;
+                        int inpu = rand.Next(k, input.Length);
+                        int spec = rand.Next(k, specials.Length);
+                        input[inpu] = specials[spec];
                     }
+                    i++;
+                    //bliver udvidet med procenter i stedet for checkbox
                     outs.Add(new string(input));
                 }
             }
-
+            else
+            {
+                outs.Add(new string(input));
+            }
             txtout.Text = string.Join(" \n", outs.ToArray());
         }
 
