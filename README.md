@@ -1,6 +1,7 @@
 
 Læs først
-Skal nok ikke tages alt for seriøst
+
+Programmet skal nok ikke tages for seriøst
 
 Sikkerhedsproblemer der skal overvejes:
 kodeord kan genskabes hvis ordbogen ikke er unik
