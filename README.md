@@ -4,8 +4,8 @@ Læs først
 Programmet skal nok ikke tages for seriøst
 
 Sikkerhedsproblemer der skal overvejes:
-kodeord kan genskabes hvis ordbogen ikke er unik
-algoritmen skal have mere bruge mere tilfældighed før brug
+kodeord kan genskabes hvis ordbogen ikke er unik, og 
+algoritmen skal har brug for mere tilfældighed før brug
 ____________________________________________________________
 
 Framework: Microsoft WPF 
