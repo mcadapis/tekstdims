@@ -81,8 +81,8 @@ namespace parser
                 {
                     for (int k = Convert.ToInt32(kmpx); k >= 0/*input.Length*/ % i; k--)
                     {
-                        int inpu = rand.Next(k, input.Length);
-                        int spec = rand.Next(k, specials.Length);
+                        int inpu = rand.Next(0, input.Length);
+                        int spec = rand.Next(0, specials.Length);
                         input[inpu] = specials[spec];
                     }
                     i++;
