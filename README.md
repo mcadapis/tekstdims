@@ -5,9 +5,9 @@ Programmet generer outputs ud fra brugerens input, disse indeholder specielle te
 
 Når denne software bruges skal man forstå at:
  - Kode ord stadig skal være en hvis længde
-  - Kode ord skal kunne huskes fordi 
+  - Kode ord skal være let at huske
    - Dette er måske ikke den bedste måde at lave passwords på!
-     Det kan være lettere at huske 
+     Det kan være lettere at huske ord som du forbinder med servicen
  
 Alternativ program: 
  https://passwordsgenerator.net/
