@@ -1,11 +1,16 @@
 
 Læs først
 
-Programmet skal nok ikke tages for seriøst
+Programmet generer outputs ud fra brugerens input, disse indeholder specielle tegn og tal som erstatter dele af ordet.
 
-Sikkerhedsproblemer der skal overvejes:
-kodeord kan genskabes hvis ordbogen ikke er unik, og 
-algoritmen har brug for mere tilfældighed før brug
+Når denne software bruges skal man forstå at:
+ - Kode ord stadig skal være en hvis længde
+  - Kode ord skal kunne huskes fordi 
+   - Dette er måske ikke den bedste måde at lave passwords på!
+     Det kan være lettere at huske 
+ 
+Alternativ program: 
+ https://passwordsgenerator.net/
 ____________________________________________________________
 
 Framework: Microsoft WPF 
@@ -24,6 +29,3 @@ Features der mangler:
     //    //Exclude specific characters
     //    //Make passwords more memorable
     //    //Tilføj bruger defineret ordbog til "memorable" funktionen
-
-    // Low priority "Bug" 
-      - længere bruger inputs => færre outputs
