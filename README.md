@@ -1,7 +1,7 @@
 Dette er en version af den klassiske idé om at skrive kodeord med specielle tegn for at opfylde sikkerhedskrav. Det er en lidt ældre måde at tænke kodeord på men beskrives meget godt i første del af tegneserien - og som der meget pænt bliver peget ud er det ikke en god måde at lave kodeord længere, og burde for så vidt undgås, og at denne grund er jeg stoppet med at vedligeholde denne repository. 
 
 
-#Sikkerhedskrav vs. Sund fornuft: En XKCD-lektion i kodeord
+# Sikkerhedskrav vs. Sund fornuft: En XKCD-lektion i kodeord
 
 ![horse battery staple](https://imgs.xkcd.com/comics/password_strength.png "CorrectHorseBatteryStaple")
 
