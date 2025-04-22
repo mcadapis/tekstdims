@@ -1,9 +1,9 @@
-
-Læs først
-
-Dette er en version af den klassiske idé om at skrive kodeord med specielle tegn for at opfylde sikkerhedskrav. Det er en lidt ældre måde at tænke kodeord på men beskrives meget godt i første del af XKCD 
+Dette er en version af den klassiske idé om at skrive kodeord med specielle tegn for at opfylde sikkerhedskrav. Det er en lidt ældre måde at tænke kodeord på men beskrives meget godt i første del af tegneserien - og som der meget pænt bliver peget ud er det ikke en god måde at lave kodeord længere, og burde for så vidt undgås, og at denne grund er jeg stoppet med at vedligeholde denne repository. 
 
 ![horse battery staple](https://imgs.xkcd.com/comics/password_strength.png "CorrectHorseBatteryStaple")
+
+Det er selvfølgelig sværere sagt end gjort, der er stadig mange services som kræver disse symboler for at blive godkendt. Gør hvad i føler giver mening for jeres organisation.
+--- 
 
 Programmet generer outputs ud fra brugerens input, disse indeholder specielle tegn og tal som erstatter dele af ordet.
 
