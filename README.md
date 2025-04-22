@@ -1,6 +1,10 @@
 
 Læs først
 
+Dette er en version af den klassiske idé om at skrive kodeord med specielle tegn for at opfylde sikkerhedskrav. Det er en lidt ældre måde at tænke kodeord på men beskrives meget godt i første del af XKCD 
+
+![horse battery staple](https://imgs.xkcd.com/comics/password_strength.png "CorrectHorseBatteryStaple")
+
 Programmet generer outputs ud fra brugerens input, disse indeholder specielle tegn og tal som erstatter dele af ordet.
 
 Når denne software bruges skal man forstå at:
